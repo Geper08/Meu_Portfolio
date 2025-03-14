@@ -1,0 +1,137 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(-45deg, #0056b3, #002a5c, #003f7f, #0073e6);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Botão "Voltar ao Topo" */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#myBtn ion-icon {
+    margin-right: 5px;
+}
+
+#myBtn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+#myBtn:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 86, 179, 0.8);
+}
+
+/* Estilos para alinhar o texto */
+.title,
+.subtitle {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Ajuste para exibir o título no centro */
+.carousel-item .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste para exibir a imagem no centro */
+.carousel-item .col-md-6 img {
+    margin: auto;
+    display: block;
+}
+
+/* Centralizar título "Projetos" na seção #features */
+#features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#features h2 {
+    margin-bottom: 20px;
+}
+
+#features p {
+    text-align: justify;
+}
+
+/* Estilização CSS para a classe active-img */
+.active-img {
+    display: block;
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.8), 
+                0 0 10px rgba(0, 86, 179, 0.6), 
+                0 0 15px rgba(0, 86, 179, 0.4);
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+/* Quando o mouse passa por cima, o efeito neon aumenta */
+
+.active-img:hover {
+    transform: scale(1.05);
+    border-color: rgba(0, 86, 179, 1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#imageContainer img {
+    display: none; /* Apenas imagens dentro do container começam ocultas */
+}
+
+
+#imageContainer img.active-img {
+    display: block;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px #0056b3, 0 0 20px #0056b3, 0 0 30px #0056b3;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+#imageContainer img.active-img:hover {
+    transform: scale(1.05);
+    border-color: #0056b3;
+}
+
+.neon-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
