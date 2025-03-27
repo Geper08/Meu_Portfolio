@@ -6,19 +6,20 @@ document.getElementById('myBtn').addEventListener('click', function () {
 // Controla a visibilidade do botão "Voltar ao Topo" durante o scroll
 window.addEventListener('scroll', function () {
     const myBtn = document.getElementById('myBtn');
-    myBtn.style.display = window.scrollY > 20 ? 'block' : 'none';
+    // Exibe o botão quando o usuário rolar 20px para baixo
+    if (window.scrollY > 20) {
+        myBtn.style.display = 'block';
+    } else {
+        myBtn.style.display = 'none';
+    }
 });
 
-// Função para voltar ao topo quando o botão é clicado
+// Função para voltar ao topo quando o botão é clicado (só é chamada se necessário para compatibilidade com navegadores mais antigos)
 function topFunction() {
     document.body.scrollTop = 0; // Para navegadores Safari
     document.documentElement.scrollTop = 0; // Para outros navegadores
 }
 
-// Lógica para mostrar/ocultar o botão de voltar ao topo conforme a posição na página
-window.onscroll = function () {
-    scrollFunction();
-};
 
 // Função para recarregar a página e rolar para o topo
 function reloadPage() {
