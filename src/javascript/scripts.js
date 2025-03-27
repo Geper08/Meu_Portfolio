@@ -9,6 +9,17 @@ window.addEventListener('scroll', function () {
     myBtn.style.display = window.scrollY > 20 ? 'block' : 'none';
 });
 
+// Função para voltar ao topo quando o botão é clicado
+function topFunction() {
+    document.body.scrollTop = 0; // Para navegadores Safari
+    document.documentElement.scrollTop = 0; // Para outros navegadores
+}
+
+// Lógica para mostrar/ocultar o botão de voltar ao topo conforme a posição na página
+window.onscroll = function () {
+    scrollFunction();
+};
+
 // Função para recarregar a página e rolar para o topo
 function reloadPage() {
     window.scrollTo(0, 0); // Rolagem para o topo
@@ -39,16 +50,7 @@ btnVisualizar.addEventListener('click', function () {
     imagemPerfil.classList.toggle('fadeIn'); // Adiciona uma classe para um efeito de fadeIn
 });
 
-// Função para voltar ao topo quando o botão é clicado
-function topFunction() {
-    document.body.scrollTop = 0; // Para navegadores Safari
-    document.documentElement.scrollTop = 0; // Para outros navegadores
-}
 
-// Lógica para mostrar/ocultar o botão de voltar ao topo conforme a posição na página
-window.onscroll = function () {
-    scrollFunction();
-};
 
 function scrollFunction() {
     const myButton = document.getElementById("myBtn");
