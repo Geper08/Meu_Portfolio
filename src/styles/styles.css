@@ -20,33 +20,53 @@ body {
 
 /* Botão "Voltar ao Topo" */
 #myBtn {
-    display: none;
+    display: none; /* Inicialmente oculto */
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 99;
-    padding: 12px;
-    background-color: #0056b3;
+    padding: 15px;
+    background-color: rgba(0, 86, 179, 0.8); /* Cor azul com transparência */
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease-in-out; /* Suaviza as transições */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.7; /* Torna o botão mais transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#myBtn ion-icon {
-    margin-right: 5px;
-}
-
+/* Alteração de cor quando o mouse passa por cima */
 #myBtn:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
+    background-color: #004085; /* Cor normal ao passar o mouse */
+    opacity: 1; /* Tornar o botão totalmente visível */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
 }
 
-#myBtn:focus {
-    outline: none;
-    box-shadow: 0 0 12px rgba(0, 86, 179, 0.8);
+/* Animação para aparecer o botão */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão exibido com animação */
+#myBtn.show {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Ícone do botão */
+#myBtn ion-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    transition: transform 0.3s ease; /* Suaviza o movimento do ícone */
+}
+
+/* Efeito ao passar o mouse sobre o ícone */
+#myBtn:hover ion-icon {
+    transform: rotate(45deg); /* Rotaciona o ícone ao passar o mouse */
 }
 
 /* Estilos para alinhar o texto */
